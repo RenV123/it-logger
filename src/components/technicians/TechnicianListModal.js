@@ -1,30 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 import TechnicianItem from './TechnicianItem';
+import PropTypes from 'prop-types';
+import { getTechnicians } from '../../actions/technicianAction';
 
-const TechnicianListModal = () => {
-  const [technicians, setTechnicians] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(''); //TODO: show a message on error
-
+const TechnicianListModal = ({
+  getTechnicians,
+  technician: { technicians, loading, error },
+}) => {
   useEffect(() => {
     getTechnicians();
     //eslint-disable-next-line
   }, []);
-
-  const getTechnicians = async () => {
-    setLoading(true);
-
-    try {
-      const response = await axios.get('/technicians');
-
-      setTechnicians(response.data);
-      setLoading(false);
-    } catch (error) {
-      setError('Unable to fetch the logs from the database.');
-      console.error(error.message);
-    }
-  };
 
   if (error) {
     return <h4 className='red-text'>{error}</h4>;
@@ -36,7 +23,7 @@ const TechnicianListModal = () => {
         <h4>Technician List</h4>
         <ul className='collection'>
           {!loading &&
-            technicians.map((technician) => (
+            technicians?.map((technician) => (
               <TechnicianItem key={technician.id} technician={technician} />
             ))}
         </ul>
@@ -44,5 +31,14 @@ const TechnicianListModal = () => {
     </div>
   );
 };
+TechnicianListModal.propTypes = {
+  getTechnicians: PropTypes.func.isRequired,
+};
 
-export default TechnicianListModal;
+const mapStateToProps = (state) => ({
+  technician: state.technician,
+});
+
+export default connect(mapStateToProps, { getTechnicians })(
+  TechnicianListModal
+);

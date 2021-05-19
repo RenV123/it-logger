@@ -31,7 +31,7 @@ const Logs = ({ log: { logs, loading }, getLogs }) => {
 };
 
 Logs.propTypes = {
-  logs: PropTypes.object.isRequired,
+  logs: PropTypes.object,
   getLogs: PropTypes.func.isRequired,
 };
 
