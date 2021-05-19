@@ -1,7 +1,6 @@
 # It Logger App
 
-A simple react app to track it tasks and issues.
-Created for the React Front to Back course as an exercise to learn [Redux](https://redux.js.org/).
+A simple react app to track it tasks and issues.<br>Created for the React Front to Back course as an exercise to learn [Redux](https://redux.js.org/).
 
 ## Usage
 1. `npm install`
