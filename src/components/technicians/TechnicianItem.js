@@ -2,15 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { deleteTechnician } from '../../actions/technicianAction';
+import MaterializeJS from 'materialize-css/dist/js/materialize.min.js';
 
-const TechnicianItem = ({ technician, deleteTechnician }) => {
+const TechnicianItem = ({
+  technician: { firstName, lastName, id },
+  deleteTechnician,
+}) => {
   const onDelete = () => {
-    deleteTechnician(technician.id);
+    MaterializeJS.toast({
+      html: `Technician was deleted!`,
+    });
+    deleteTechnician(id);
   };
   return (
     <li className='collection-item'>
       <div>
-        {technician.firstName} {technician.lastName}
+        {firstName} {lastName}
         <a href='#!' className='secondary-content' onClick={onDelete}>
           <i className='material-icons grey-text'>delete</i>
         </a>

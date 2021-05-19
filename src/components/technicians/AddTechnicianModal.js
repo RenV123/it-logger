@@ -19,7 +19,7 @@ const AddTechnicianModal = ({ addTechnician }) => {
       });
 
       MaterializeJS.toast({
-        html: `${firstName} ${lastName} was addedd as a technician!`,
+        html: `${firstName} ${lastName} was added as a technician!`,
       });
 
       //clear Fields
