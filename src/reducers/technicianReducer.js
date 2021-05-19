@@ -40,9 +40,11 @@ const technicianReducer = (state = initialState, action) => {
         loading: true,
       };
     case TECHNICIANS_ERROR:
+      console.error(action.payload);
       return {
         ...state,
         error: action.payload,
+        loading: false,
       };
     default:
       return state;
