@@ -1,42 +1,49 @@
 {
-    "logs": [
-        {
-            "id": 1,
-            "message": "Changed hard drive on workstation 005",
-            "attention": false,
-            "date": "02-03-2019",
-            "tech": "Sam Smith"
-        },
-        {
-            "id": 2,
-            "message": "Workstation 007 not posting",
-            "attention": true,
-            "date": "02-03-2019",
-            "tech": "John Doe"
-        },
-        {
-            "id": 3,
-            "message": "Changed memory on workstation 050",
-            "attention": false,
-            "date": "02-03-2019",
-            "tech": "Sara Wilson"
-        }
-    ],
-    "technicians": [
-        {
-            "id": 1,
-            "firstName": "John",
-            "lastName": "Doe"
-        },
-        {
-            "id": 2,
-            "firstName": "Sam",
-            "lastName": "Smith"
-        },
-        {
-            "id": 3,
-            "firstName": "Sara",
-            "lastName": "Wilson"
-        }
-    ]
+  "logs": [
+    {
+      "id": 1,
+      "message": "Changed hard drive on workstation 005",
+      "attention": false,
+      "date": "2019-03-02",
+      "technician": "Sam Smith"
+    },
+    {
+      "id": 2,
+      "message": "Workstation 007 not posting",
+      "attention": true,
+      "date": "2019-03-02",
+      "technician": "John Doe"
+    },
+    {
+      "id": 3,
+      "message": "Changed memory on workstation 050",
+      "attention": false,
+      "date": "2019-03-02",
+      "technician": "Sara Wilson"
+    },
+    {
+      "message": "Workstation 005 is overheating during compilation.",
+      "attention": true,
+      "technician": "Sara Wilson",
+      "date": "2021-05-19T12:51:57.349Z",
+      "id": 4
+    }
+  ],
+  "technicians": [
+    {
+      "id": 1,
+      "firstName": "John",
+      "lastName": "Doe"
+    },
+    {
+      "id": 2,
+      "firstName": "Sam",
+      "lastName": "Smith"
+    },
+    {
+      "id": 3,
+      "firstName": "Sara",
+      "lastName": "Wilson"
+    }
+  ]
 }
